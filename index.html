@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -96,10 +95,10 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="dist/output.css">
     <link rel="stylesheet" href="assets/css/jquery-confirm.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
 </head>
 <body class="bg-gray-50">
@@ -123,7 +122,7 @@
                 <a href="#contact" class="text-white hover:text-gray-300 transition-colors">Contato</a>
             </div>
             
-            <button class="md:hidden text-white" onclick="toggleMenu()" aria-label="Abrir menu mobile" aria-expanded="false">
+            <button type="button" class="md:hidden text-white" onclick="toggleMenu()" aria-label="Abrir menu mobile" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -152,7 +151,7 @@
             <div class="absolute top-20 left-1/2 w-32 h-32 bg-white rounded-full floating" style="animation-delay: 2s;"></div>
         </div>
         
-        <div class="container-custom pt-32 pb-20 relative z-10">
+        <div class="pt-40 pb-20 relative z-10">
             <div class="text-center">
                 <div class="lamp-container mx-auto mb-4" id="lamp-effect">
                     <svg xmlns="http://www.w3.org/2000/svg" width="245" height="188" fill="none" role="img" aria-label="Lâmpada representando ideias criativas">
@@ -174,7 +173,7 @@
                     </svg>
                 </div>
                 
-                <h2 class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                <h2 class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto font-semibold">
                     Transformamos <span class="font-title-impact">IDEIAS</span> em comunicação visual <span class="font-title-impact">IMPACTANTE</span>.<br> Banners, plotagens, adesivagem e muito mais.
                 </h2>
                 
@@ -182,7 +181,7 @@
                     <button type="button" onclick="SendWhatssap()" class="bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg will-change-transform">
                         Solicitar Orçamento
                     </button>
-                    <button onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})" class="glass-effect text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all">
+                    <button type="button" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})" class="glass-effect text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all">
                         Ver Portfólio
                     </button>
                 </div>
@@ -209,17 +208,30 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </button>
+
                     <div class="service-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Banners</h3>
                     <p class="text-sm">Banners personalizados para eventos, lojas e campanhas publicitárias com alta qualidade de impressão.</p>
                 </article>
+
                 
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+                    </button>
                     <div class="service-icon w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -229,7 +241,12 @@
                     <p class="text-sm">Plotagem de veículos, fachadas e superfícies diversas com materiais de alta durabilidade.</p>
                 </article>
                 
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+                    </button>
                     <div class="service-icon w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -239,7 +256,12 @@
                     <p class="text-sm">Adesivos personalizados para vitrines, paredes e aplicações decorativas com acabamento profissional.</p>
                 </article>
                 
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+                    </button>
                     <div class="service-icon w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -249,7 +271,12 @@
                     <p class="text-sm">Placas de identificação, sinalização e comunicação visual para empresas e estabelecimentos.</p>
                 </article>
                 
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+                    </button>
                     <div class="service-icon w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -259,7 +286,12 @@
                     <p class="text-sm">Criação de layouts personalizados e identidade visual para todos os tipos de materiais.</p>
                 </article>
                 
-                <article class="service-card p-8 rounded-2xl hover-lift">
+                <article class="service-card p-8 rounded-2xl hover-lift relative">
+                    <button type="button" class="absolute top-2 right-2 bg-gray-300 text-white p-2 rounded-full shadow hover:bg-black transition">
+                        <!-- Ícone de seta -->
+                        <svg  class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+                    </button>
                     <div class="service-icon w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -274,53 +306,57 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-gray-100">
-        <div class="container-custom mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Nosso Portfólio</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Confira alguns dos nossos trabalhos mais recentes
-                </p>
+    <div class="container-custom mx-auto px-6">
+        <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Nosso Portfólio</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Confira alguns dos nossos trabalhos mais recentes
+        </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- CARD 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
+            <div class="h-[340px] bg-cover bg-center relative" style="background-image: url('https://placehold.co/370x340');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-semibold">Banner Promocional</span>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
-                    <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-600 relative">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-white font-semibold">Banner Promocional</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Projeto Banner</h3>
-                        <p class="text-gray-600">Banner promocional para evento corporativo</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
-                    <div class="h-64 bg-gradient-to-br from-green-400 to-blue-600 relative">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-white font-semibold">Plotagem Veicular</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Plotagem Frota</h3>
-                        <p class="text-gray-600">Plotagem completa de frota comercial</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
-                    <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-600 relative">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-white font-semibold">Adesivagem Vitrine</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Vitrine Loja</h3>
-                        <p class="text-gray-600">Adesivagem decorativa para vitrine</p>
-                    </div>
-                </div>
+            </div>
+            <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Projeto Banner</h3>
+            <p class="text-gray-600">Banner promocional para evento corporativo</p>
             </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
+            <div class="h-[340px] bg-cover bg-center relative" style="background-image: url('https://placehold.co/370x340');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-semibold">Plotagem Veicular</span>
+            </div>
+            </div>
+            <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Plotagem Frota</h3>
+            <p class="text-gray-600">Plotagem completa de frota comercial</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden hover-lift group">
+            <div class="h-[340px] bg-cover bg-center relative" style="background-image: url('https://placehold.co/370x340');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-semibold">Adesivagem Vitrine</span>
+            </div>
+            </div>
+            <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Vitrine Loja</h3>
+            <p class="text-gray-600">Adesivagem decorativa para vitrine</p>
+            </div>
+        </div>
+        </div>
+    </div>
     </section>
+
 
     <!-- CTA Section -->
     <section class="py-20 gradient-bg relative overflow-hidden">
@@ -449,414 +485,474 @@
         </div>
     </footer>
 
+    <!-- Modal -->
+
+    <!-- Modal -->
+    <div id="modalSwiper" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-3xl mx-auto">
+            <!-- Botão de fechar -->
+            <button type="button" id="closeModal" class="absolute top-2 right-2 text-white text-3xl z-50">&times;</button>
+
+            <!-- Slider container -->
+            <div class="swiper mySwiper rounded-lg overflow-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    <img src="https://placehold.co/800x400" class="w-full h-auto" alt="Image 1 Slider" />
+                    </div>
+                    <div class="swiper-slide">
+                    <img src="https://placehold.co/800x400" class="w-full h-auto" alt="Image 2 Slider" />
+                    </div>
+                    <div class="swiper-slide">
+                    <img src="https://placehold.co/800x400" class="w-full h-auto" alt="Image 3 Slider" />
+                    </div>
+                </div>
+                <!-- Pagination e navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next text-white"></div>
+                <div class="swiper-button-prev text-white"></div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/jquery-confirm.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
     // Configurações centralizadas
-const CONFIG = {
-    emailjs: {
-        publicKey: 'OxN33F_FYr9DDCjsD',
-        serviceId: 'service_n9b4a29',
-        templateId: 'template_3abepzy'
-    },
-    whatsapp: {
-        phoneNumber: '5531991072565',
-        defaultMessage: 'Olá, gostaria de solicitar um orçamento.'
-    },
-    ui: {
-        scrollThreshold: 10,
-        lampOpacity: {
-            default: 0.8,
-            hover: 1
+    const CONFIG = {
+        emailjs: {
+            publicKey: 'OxN33F_FYr9DDCjsD',
+            serviceId: 'service_n9b4a29',
+            templateId: 'template_3abepzy'
+        },
+        whatsapp: {
+            phoneNumber: '5531991072565',
+            defaultMessage: 'Olá, gostaria de solicitar um orçamento.'
+        },
+        ui: {
+            scrollThreshold: 10,
+            lampOpacity: {
+                default: 0.8,
+                hover: 1
+            }
         }
-    }
-};
+    };
 
-// Utilidades
-const Utils = {
-    debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
+    // Utilidades
+    const Utils = {
+        debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
                 clearTimeout(timeout);
-                func(...args);
+                timeout = setTimeout(later, wait);
             };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    },
+        },
 
-    validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    },
+        validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        },
 
-    validatePhone(phone) {
-        const phoneRegex = /^[\d\s\-\(\)\+]+$/;
-        return phoneRegex.test(phone) && phone.length >= 10;
-    },
+        validatePhone(phone) {
+            const phoneRegex = /^[\d\s\-\(\)\+]+$/;
+            return phoneRegex.test(phone) && phone.length >= 10;
+        },
 
-    sanitizeInput(input) {
-        return input.trim().replace(/[<>]/g, '');
-    }
-};
-
-// Módulo de EmailJS
-const EmailService = {
-    initialized: false,
-
-    init() {
-        if (this.initialized) return;
-        
-        try {
-            emailjs.init({
-                publicKey: CONFIG.emailjs.publicKey,
-                blockHeadless: true,
-                blockList: {
-                    list: ['foo@emailjs.com', 'bar@emailjs.com'],
-                    watchVariable: 'userEmail',
-                },
-                limitRate: {
-                    id: 'app',
-                    throttle: 10000,
-                },
-            });
-            this.initialized = true;
-        } catch (error) {
-            console.error('Erro ao inicializar EmailJS:', error);
+        sanitizeInput(input) {
+            return input.trim().replace(/[<>]/g, '');
         }
-    },
+    };
 
-    async sendEmail(params) {
-        if (!this.initialized) {
-            throw new Error('EmailJS não inicializado');
+    // Módulo de EmailJS
+    const EmailService = {
+        initialized: false,
+
+        init() {
+            if (this.initialized) return;
+            
+            try {
+                emailjs.init({
+                    publicKey: CONFIG.emailjs.publicKey,
+                    blockHeadless: true,
+                    blockList: {
+                        list: ['foo@emailjs.com', 'bar@emailjs.com'],
+                        watchVariable: 'userEmail',
+                    },
+                    limitRate: {
+                        id: 'app',
+                        throttle: 10000,
+                    },
+                });
+                this.initialized = true;
+            } catch (error) {
+                console.error('Erro ao inicializar EmailJS:', error);
+            }
+        },
+
+        async sendEmail(params) {
+            if (!this.initialized) {
+                throw new Error('EmailJS não inicializado');
+            }
+
+            try {
+                const response = await emailjs.send(
+                    CONFIG.emailjs.serviceId,
+                    CONFIG.emailjs.templateId,
+                    params
+                );
+                return response;
+            } catch (error) {
+                console.error('Erro ao enviar email:', error);
+                throw error;
+            }
         }
+    };
 
-        try {
-            const response = await emailjs.send(
-                CONFIG.emailjs.serviceId,
-                CONFIG.emailjs.templateId,
-                params
-            );
-            return response;
-        } catch (error) {
-            console.error('Erro ao enviar email:', error);
-            throw error;
+    // Módulo de Validação de Formulário
+    const FormValidator = {
+        validate(formData) {
+            const errors = [];
+
+            if (!formData.name || formData.name.length < 2) {
+                errors.push('Nome deve ter pelo menos 2 caracteres');
+            }
+
+            if (!formData.email || !Utils.validateEmail(formData.email)) {
+                errors.push('Email inválido');
+            }
+
+            if (!formData.phone || !Utils.validatePhone(formData.phone)) {
+                errors.push('Telefone inválido');
+            }
+
+            if (!formData.message || formData.message.length < 10) {
+                errors.push('Mensagem deve ter pelo menos 10 caracteres');
+            }
+
+            return errors;
         }
-    }
-};
+    };
 
-// Módulo de Validação de Formulário
-const FormValidator = {
-    validate(formData) {
-        const errors = [];
-
-        if (!formData.name || formData.name.length < 2) {
-            errors.push('Nome deve ter pelo menos 2 caracteres');
-        }
-
-        if (!formData.email || !Utils.validateEmail(formData.email)) {
-            errors.push('Email inválido');
-        }
-
-        if (!formData.phone || !Utils.validatePhone(formData.phone)) {
-            errors.push('Telefone inválido');
-        }
-
-        if (!formData.message || formData.message.length < 10) {
-            errors.push('Mensagem deve ter pelo menos 10 caracteres');
-        }
-
-        return errors;
-    }
-};
-
-// Módulo de UI
-const UIManager = {
-    showSuccess(message) {
-        if (typeof $.confirm === 'function') {
-            $.confirm({
-                bootstrapClasses: {
-                    container: 'container'
-                },
-                boxWidth: '400px',
-                icon: 'fa fa-check',
-                title: 'Sucesso!',
-                content: message,
-                type: 'green',
-                buttons: {
-                    ok: {
-                        text: 'OK',
-                        btnClass: 'btn-green'
+    // Módulo de UI
+    const UIManager = {
+        showSuccess(message) {
+            if (typeof $.confirm === 'function') {
+                $.confirm({
+                    bootstrapClasses: {
+                        container: 'container'
+                    },
+                    boxWidth: '400px',
+                    icon: 'fa fa-check',
+                    title: 'Sucesso!',
+                    content: message,
+                    type: 'green',
+                    buttons: {
+                        ok: {
+                            text: 'OK',
+                            btnClass: 'btn-green'
+                        }
                     }
-                }
-            });
-        } else {
-            alert(message);
-        }
-    },
-
-    showError(message) {
-        if (typeof $.confirm === 'function') {
-            $.confirm({
-                bootstrapClasses: {
-                    container: 'container'
-                },
-                boxWidth: '400px',
-                icon: 'fa fa-times',
-                title: 'Erro',
-                content: message,
-                type: 'red',
-                buttons: {
-                    ok: {
-                        text: 'OK',
-                        btnClass: 'btn-red'
-                    }
-                }
-            });
-        } else {
-            alert(message);
-        }
-    },
-
-    showValidationErrors(errors) {
-        const errorMessage = errors.join('<br>');
-        this.showError(errorMessage);
-    },
-
-    toggleSubmitButton(disabled) {
-        const submitBtn = document.querySelector('#contact-form button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = disabled;
-            submitBtn.textContent = disabled ? 'Enviando...' : 'Enviar';
-        }
-    }
-};
-
-// Módulo principal de Contato
-const ContactModule = {
-    init() {
-        const form = document.getElementById('contact-form');
-        if (!form) return;
-
-        form.addEventListener('submit', this.handleSubmit.bind(this));
-        
-        // Adicionar validação em tempo real
-        this.addRealTimeValidation();
-    },
-
-    addRealTimeValidation() {
-        const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', () => {
-                this.validateField(input);
-            });
-        });
-    },
-
-    validateField(field) {
-        const value = field.value.trim();
-        let isValid = true;
-
-        // Remove classes anteriores
-        field.classList.remove('border-red-500', 'border-green-500');
-
-        switch (field.id) {
-            case 'name':
-                isValid = value.length >= 2;
-                break;
-            case 'email':
-                isValid = Utils.validateEmail(value);
-                break;
-            case 'phone':
-                isValid = Utils.validatePhone(value);
-                break;
-            case 'message':
-                isValid = value.length >= 10;
-                break;
-        }
-
-        // Adicionar indicação visual
-        field.classList.add(isValid ? 'border-green-500' : 'border-red-500');
-        return isValid;
-    },
-
-    async handleSubmit(e) {
-        e.preventDefault();
-        
-        const formData = this.getFormData();
-        const errors = FormValidator.validate(formData);
-
-        if (errors.length > 0) {
-            UIManager.showValidationErrors(errors);
-            return;
-        }
-
-        UIManager.toggleSubmitButton(true);
-
-        try {
-            const emailParams = {
-                from_name: formData.name,
-                userEmail: formData.email,
-                phone: formData.phone,
-                message: formData.message
-            };
-
-            await EmailService.sendEmail(emailParams);
-            
-            UIManager.showSuccess('Mensagem enviada com sucesso! Enviaremos uma resposta em breve.');
-            document.getElementById('contact-form').reset();
-            
-            // Limpar validações visuais
-            this.clearValidationStyles();
-            
-        } catch (error) {
-            UIManager.showError('Erro ao enviar mensagem. Tente novamente.');
-        } finally {
-            UIManager.toggleSubmitButton(false);
-        }
-    },
-
-    getFormData() {
-        return {
-            name: Utils.sanitizeInput(document.getElementById('name').value),
-            email: Utils.sanitizeInput(document.getElementById('email').value),
-            phone: Utils.sanitizeInput(document.getElementById('phone').value),
-            message: Utils.sanitizeInput(document.getElementById('message').value)
-        };
-    },
-
-    clearValidationStyles() {
-        const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
-        inputs.forEach(input => {
-            input.classList.remove('border-red-500', 'border-green-500');
-        });
-    }
-};
-
-// Módulo de WhatsApp
-const WhatsAppModule = {
-    init() {
-        // Buscar por botões de WhatsApp (adaptável a diferentes IDs/classes)
-        const whatsappButtons = document.querySelectorAll('[onclick*="SendWhatssap"], .whatsapp-btn, #whatsapp-btn');
-        whatsappButtons.forEach(btn => {
-            btn.addEventListener('click', this.sendWhatsApp);
-        });
-    },
-
-    sendWhatsApp(customMessage = null) {
-        const message = customMessage || CONFIG.whatsapp.defaultMessage;
-        const url = `https://api.whatsapp.com/send?phone=${CONFIG.whatsapp.phoneNumber}&text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
-    }
-};
-
-// Módulo de Navegação
-const NavigationModule = {
-    init() {
-        this.initMobileMenu();
-        this.initScrollHeader();
-    },
-
-    initMobileMenu() {
-        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const menu = document.getElementById('mobile-menu');
-                if (menu) {
-                    menu.classList.add('hidden');
-                }
-            });
-        });
-    },
-
-    initScrollHeader() {
-        const debouncedScroll = Utils.debounce(() => {
-            const header = document.getElementById('header');
-            if (!header) return;
-
-            if (window.scrollY > CONFIG.ui.scrollThreshold) {
-                header.classList.add('bg-black', 'bg-opacity-70', 'backdrop-blur-md');
+                });
             } else {
-                header.classList.remove('bg-black', 'bg-opacity-70', 'backdrop-blur-md');
+                alert(message);
             }
-        }, 10);
+        },
 
-        window.addEventListener('scroll', debouncedScroll);
-    }
-};
-
-// Módulo de Efeitos Visuais
-const EffectsModule = {
-    init() {
-        this.initLampEffect();
-    },
-
-    initLampEffect() {
-        const lampElement = document.getElementById('effect-lamp');
-        if (!lampElement) return;
-
-        // Configuração inicial
-        lampElement.style.opacity = CONFIG.ui.lampOpacity.default;
-        lampElement.style.zIndex = '9999';
-        lampElement.style.position = 'relative';
-        lampElement.style.pointerEvents = 'auto';
-
-        // Event listeners
-        lampElement.addEventListener('mouseenter', () => {
-            lampElement.style.opacity = CONFIG.ui.lampOpacity.hover;
-            const lampGlow = lampElement.querySelector('.lamp-glow');
-            if (lampGlow) {
-                lampGlow.style.fill = '#f5e663';
+        showError(message) {
+            if (typeof $.confirm === 'function') {
+                $.confirm({
+                    bootstrapClasses: {
+                        container: 'container'
+                    },
+                    boxWidth: '400px',
+                    icon: 'fa fa-times',
+                    title: 'Erro',
+                    content: message,
+                    type: 'red',
+                    buttons: {
+                        ok: {
+                            text: 'OK',
+                            btnClass: 'btn-red'
+                        }
+                    }
+                });
+            } else {
+                alert(message);
             }
-        });
+        },
 
-        lampElement.addEventListener('mouseleave', () => {
+        showValidationErrors(errors) {
+            const errorMessage = errors.join('<br>');
+            this.showError(errorMessage);
+        },
+
+        toggleSubmitButton(disabled) {
+            const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = disabled;
+                submitBtn.textContent = disabled ? 'Enviando...' : 'Enviar';
+            }
+        }
+    };
+
+    // Módulo principal de Contato
+    const ContactModule = {
+        init() {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            form.addEventListener('submit', this.handleSubmit.bind(this));
+            
+            // Adicionar validação em tempo real
+            this.addRealTimeValidation();
+        },
+
+        addRealTimeValidation() {
+            const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', () => {
+                    this.validateField(input);
+                });
+            });
+        },
+
+        validateField(field) {
+            const value = field.value.trim();
+            let isValid = true;
+
+            // Remove classes anteriores
+            field.classList.remove('border-red-500', 'border-green-500');
+
+            switch (field.id) {
+                case 'name':
+                    isValid = value.length >= 2;
+                    break;
+                case 'email':
+                    isValid = Utils.validateEmail(value);
+                    break;
+                case 'phone':
+                    isValid = Utils.validatePhone(value);
+                    break;
+                case 'message':
+                    isValid = value.length >= 10;
+                    break;
+            }
+
+            // Adicionar indicação visual
+            field.classList.add(isValid ? 'border-green-500' : 'border-red-500');
+            return isValid;
+        },
+
+        async handleSubmit(e) {
+            e.preventDefault();
+            
+            const formData = this.getFormData();
+            const errors = FormValidator.validate(formData);
+
+            if (errors.length > 0) {
+                UIManager.showValidationErrors(errors);
+                return;
+            }
+
+            UIManager.toggleSubmitButton(true);
+
+            try {
+                const emailParams = {
+                    from_name: formData.name,
+                    userEmail: formData.email,
+                    phone: formData.phone,
+                    message: formData.message
+                };
+
+                await EmailService.sendEmail(emailParams);
+                
+                UIManager.showSuccess('Mensagem enviada com sucesso! Enviaremos uma resposta em breve.');
+                document.getElementById('contact-form').reset();
+                
+                // Limpar validações visuais
+                this.clearValidationStyles();
+                
+            } catch (error) {
+                UIManager.showError('Erro ao enviar mensagem. Tente novamente.');
+            } finally {
+                UIManager.toggleSubmitButton(false);
+            }
+        },
+
+        getFormData() {
+            return {
+                name: Utils.sanitizeInput(document.getElementById('name').value),
+                email: Utils.sanitizeInput(document.getElementById('email').value),
+                phone: Utils.sanitizeInput(document.getElementById('phone').value),
+                message: Utils.sanitizeInput(document.getElementById('message').value)
+            };
+        },
+
+        clearValidationStyles() {
+            const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+            inputs.forEach(input => {
+                input.classList.remove('border-red-500', 'border-green-500');
+            });
+        }
+    };
+
+    // Módulo de WhatsApp
+    const WhatsAppModule = {
+        init() {
+            // Buscar por botões de WhatsApp (adaptável a diferentes IDs/classes)
+            const whatsappButtons = document.querySelectorAll('[onclick*="SendWhatssap"], .whatsapp-btn, #whatsapp-btn');
+            whatsappButtons.forEach(btn => {
+                btn.addEventListener('click', this.sendWhatsApp);
+            });
+        },
+
+        sendWhatsApp(customMessage = null) {
+            const message = customMessage || CONFIG.whatsapp.defaultMessage;
+            const url = `https://api.whatsapp.com/send?phone=${CONFIG.whatsapp.phoneNumber}&text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    };
+
+    // Módulo de Navegação
+    const NavigationModule = {
+        init() {
+            this.initMobileMenu();
+            this.initScrollHeader();
+        },
+
+        initMobileMenu() {
+            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            });
+        },
+
+        initScrollHeader() {
+            const debouncedScroll = Utils.debounce(() => {
+                const header = document.getElementById('header');
+                if (!header) return;
+
+                if (window.scrollY > CONFIG.ui.scrollThreshold) {
+                    header.classList.add('bg-black', 'opacity-75', 'backdrop-blur-md');
+                } else {
+                    header.classList.remove('bg-black', 'opacity-75', 'backdrop-blur-md');
+                }
+            }, 10);
+
+            window.addEventListener('scroll', debouncedScroll);
+        }
+    };
+
+    // Módulo de Efeitos Visuais
+    const EffectsModule = {
+        init() {
+            this.initLampEffect();
+        },
+
+        initLampEffect() {
+            const lampElement = document.getElementById('effect-lamp');
+            if (!lampElement) return;
+
+            // Configuração inicial
             lampElement.style.opacity = CONFIG.ui.lampOpacity.default;
-            const lampGlow = lampElement.querySelector('.lamp-glow');
-            if (lampGlow) {
-                lampGlow.style.fill = '';
-            }
+            lampElement.style.zIndex = '9999';
+            lampElement.style.position = 'relative';
+            lampElement.style.pointerEvents = 'auto';
+
+            // Event listeners
+            lampElement.addEventListener('mouseenter', () => {
+                lampElement.style.opacity = CONFIG.ui.lampOpacity.hover;
+                const lampGlow = lampElement.querySelector('.lamp-glow');
+                if (lampGlow) {
+                    lampGlow.style.fill = '#f5e663';
+                }
+            });
+
+            lampElement.addEventListener('mouseleave', () => {
+                lampElement.style.opacity = CONFIG.ui.lampOpacity.default;
+                const lampGlow = lampElement.querySelector('.lamp-glow');
+                if (lampGlow) {
+                    lampGlow.style.fill = '';
+                }
+            });
+        }
+    };
+
+    // Função global para compatibilidade (caso seja chamada em HTML)
+    function SendWhatssap() {
+        WhatsAppModule.sendWhatsApp();
+    }
+
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    // Inicialização principal
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inicializar EmailJS
+        EmailService.init();
+        
+        // Inicializar módulos
+        ContactModule.init();
+        WhatsAppModule.init();
+        NavigationModule.init();
+        EffectsModule.init();
+        
+        console.log('🚀 Landing page inicializada com sucesso!');
+    });
+
+    // Fallback para jQuery ready (se jQuery estiver disponível)
+    if (typeof $ !== 'undefined') {
+        $(document).ready(() => {
+            // Código adicional específico do jQuery se necessário
+            console.log('📱 jQuery disponível e inicializado');
         });
     }
-};
 
-// Função global para compatibilidade (caso seja chamada em HTML)
-function SendWhatssap() {
-    WhatsAppModule.sendWhatsApp();
-}
+      document.querySelectorAll(".service-card button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+        const modal = document.getElementById("modalSwiper");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
 
-function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-        menu.classList.toggle('hidden');
-    }
-}
-
-// Inicialização principal
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar EmailJS
-    EmailService.init();
-    
-    // Inicializar módulos
-    ContactModule.init();
-    WhatsAppModule.init();
-    NavigationModule.init();
-    EffectsModule.init();
-    
-    console.log('🚀 Landing page inicializada com sucesso!');
-});
-
-// Fallback para jQuery ready (se jQuery estiver disponível)
-if (typeof $ !== 'undefined') {
-    $(document).ready(() => {
-        // Código adicional específico do jQuery se necessário
-        console.log('📱 jQuery disponível e inicializado');
+        // Inicializar o Swiper
+        if (!window._swiperInstance) {
+            window._swiperInstance = new Swiper(".mySwiper", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
+        }
+        });
     });
-}
+
+    // Fechar o modal
+    document.getElementById("closeModal").addEventListener("click", () => {
+        const modal = document.getElementById("modalSwiper");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+    });
     </script>
 
 </body>
 </html>
-                    
