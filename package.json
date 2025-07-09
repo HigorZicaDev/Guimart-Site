@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "build": "postcss styles.css -o dist/output.css",
-    "watch": "postcss styles.css -o dist/output.css --watch"
+    "build": "postcss styles.css -o public/output.css",
+    "watch": "postcss styles.css -o public/output.css --watch"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
