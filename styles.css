@@ -8,8 +8,8 @@
 }
 
 :root {
-    --gradient-primary: linear-gradient(135deg, #642B73 0%, #C6426E 100%);
-    --color-primary: #642B73;
+    --gradient-primary: linear-gradient(135deg, #050505 0%, #272727 100%);
+    --color-primary: #272727;
     --color-secondary: #C6426E;
     --color-accent: #f5e663;
 }
@@ -93,7 +93,6 @@
     font-size: 2.5rem;
     line-height: 1.2;
     color: var(--color-accent);
-    -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #000;
 }
 .container-custom {
