@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Morally Serif';
-  src: url('../assets/fontes/Morally_Serif.otf') format('opentype');
+  src: url('/fontes/Morally_Serif.otf') format('opentype');
 }
 
 :root {
